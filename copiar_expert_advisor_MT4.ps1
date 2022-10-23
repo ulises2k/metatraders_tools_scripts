@@ -1,4 +1,4 @@
-# Script que copia todos los Experts Advisor en MT5
+# Script que copia todos los Experts Advisor en MT4
 # @ulises2k
 # 26/09/2022
 #
@@ -13,8 +13,8 @@ foreach ($d in $dir) {
 
 		$DirEA = $dirMT + [string]$d.Name + "\MQL4\Experts\"
 		if (Test-Path -Path $DirEA) {
-			$curDir = Get-Location
-			Copy-Item -Path $curDir + "\Experts\*.ex4" -Destination $DirEA
+			$OriginDir = Join-Path -Path $pwd -ChildPath "Experts\*.ex4"
+			Copy-Item -Path $OriginDir -Destination $DirEA
 			Write-Host $DirEA
 		}
 	}

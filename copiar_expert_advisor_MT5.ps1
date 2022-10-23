@@ -13,8 +13,8 @@ foreach ($d in $dir) {
 
 		$DirEA = $dirMT + [string]$d.Name + "\MQL5\Experts\"
 		if (Test-Path -Path $DirEA) {
-			$curDir = Get-Location
-			Copy-Item -Path $curDir + "\Experts\*.ex5" -Destination $DirEA
+			$OriginDir = Join-Path -Path $pwd -ChildPath "Experts\*.ex5"
+			Copy-Item -Path $OriginDir -Destination $DirEA
 			Write-Host $DirEA
 		}
 	}
