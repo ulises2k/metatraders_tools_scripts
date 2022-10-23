@@ -23,7 +23,7 @@ foreach ($d in $dir) {
 
 	if (($d.Name -ne "Community") -and ($d.Name -ne "Common") -and ($d.Name -ne "Help")) {
 
-		$DirTemplate = $dirMT + [string]$d.Name + "\MQL4\Profiles\Templates\"
+		$DirTemplate = $dirMT + [string]$d.Name + "\Templates\"
 		if (Test-Path -Path $DirTemplate) {
 			$OriginDir = Join-Path -Path $pwd -ChildPath "\Templates-MT4\Default.tpl"
 			Copy-Item -Path $OriginDir -Destination $DirTemplate
